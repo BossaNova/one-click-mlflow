@@ -27,17 +27,20 @@ def get_token():
 
 
 def fetch_sa_key():
+    print("fetch_key")
     check_output([f"gcloud iam service-accounts keys create ./mlflow-log-pusher-key.json --iam-account mlflow-log-pusher@{PROJECT_ID}.iam.gserviceaccount.com"], shell=True)
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = str(Path(__file__).parent / "mlflow-log-pusher-key.json")
 
 
 def _get_token():
+    print("_get_token")
     client_id = _get_client_id(tracking_uri)
     open_id_connect_token = id_token.fetch_id_token(Request(), client_id)
     return open_id_connect_token
 
 
 def _get_client_id(service_uri):
+    print("_get_client_id")
     redirect_response = requests.get(service_uri, allow_redirects=False)
     if redirect_response.status_code != 302:
         print(f"The URI {service_uri} does not seem to be a valid AppEngine endpoint.")
@@ -57,7 +60,7 @@ PROJECT_ID = input("Enter your project ID: ")
 EXPERIMENT_NAME = input("Enter the name of your MLFlow experiment: ")
 
 # If mlflow if not deployed on the default app engine service, change it with the url of your service <!-- omit in toc -->
-tracking_uri = f"https://mlflow-dot-{PROJECT_ID}.ew.r.appspot.com"
+tracking_uri = f"https://mlflow-dot-{PROJECT_ID}.ue'https://mlflow-dot-ml-flow-350013.ew.r.appspot.com'.r.appspot.com"
 
 os.environ["MLFLOW_TRACKING_TOKEN"] = get_token()
 

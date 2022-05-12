@@ -11,3 +11,5 @@ secrets/
 
 #python
 */__pycache__/
+/vars.json
+/examples/mlflow-log-pusher-key.json
