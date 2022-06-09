@@ -1,4 +1,4 @@
-export TF_VAR_web_app_users='["user:mark.russell@bossanova.com","group:gcp-developers@bossanova.com"]'
+export TF_VAR_web_app_users='["user:mark.russell@bossanova.com","group:gcp-mlflow@bossanova.com"]'
 export TF_VAR_project_id=one-click-mlflow-352114
 export TF_VAR_project_number=365673998648
 export TF_VAR_backend_bucket=one-click-mlflow-352114-365673998648-ocmlf-state
